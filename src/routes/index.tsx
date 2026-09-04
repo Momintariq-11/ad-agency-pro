@@ -194,9 +194,14 @@ function Home() {
                   View Our Services
                 </a>
               </div>
-              <p className="mt-8 text-sm text-muted-foreground">
-                We handle your digital presence from creation to promotion.
-              </p>
+              <div className="mt-8 space-y-1.5 border-l border-border-strong pl-4">
+                <p className="text-sm text-muted-foreground">
+                  We handle your digital presence from creation to promotion.
+                </p>
+                <p className="text-sm font-semibold text-primary">
+                  We are a one stop solution for your business.
+                </p>
+              </div>
             </div>
 
             <div className="relative mx-auto w-full max-w-sm">
