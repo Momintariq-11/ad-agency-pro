@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
 import { LINKS, NAV } from "@/lib/site";
 
+const BRAND = "The . Ad . Agency";
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [typed, setTyped] = useState(0);
+  const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -13,6 +17,26 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    if (timer.current) clearInterval(timer.current);
+    if (!scrolled) {
+      setTyped(0);
+      return;
+    }
+    timer.current = setInterval(() => {
+      setTyped((n) => {
+        if (n >= BRAND.length) {
+          if (timer.current) clearInterval(timer.current);
+          return n;
+        }
+        return n + 1;
+      });
+    }, 55);
+    return () => {
+      if (timer.current) clearInterval(timer.current);
+    };
+  }, [scrolled]);
 
   return (
     <header
@@ -29,9 +53,21 @@ export function Header() {
         }`}
       >
         <a href="#top" className="flex items-center gap-3" aria-label="The Ad Agency home">
-          <img src={logo.url} alt="The Ad Agency logo" className={`object-contain transition-all duration-300 ${scrolled ? "h-10 w-10" : "h-12 w-12"}`} />
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-foreground sm:text-sm">
-            The Ad Agency
+          <img
+            src={logo.url}
+            alt="The Ad Agency logo"
+            className="object-contain transition-all duration-500 ease-out"
+            style={{
+              height: scrolled ? "2.5rem" : "3.5rem",
+              width: scrolled ? "2.5rem" : "3.5rem",
+              transform: scrolled ? "scale(1)" : "scale(1.05)",
+            }}
+          />
+          <span
+            className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-foreground sm:text-sm"
+            aria-label="The Ad Agency"
+          >
+            <span aria-hidden="true">{scrolled ? BRAND.slice(0, typed) : ""}</span>
           </span>
         </a>
 
