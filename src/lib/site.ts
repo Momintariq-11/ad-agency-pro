@@ -1,7 +1,7 @@
 // Replace these placeholder links with the real profile URLs.
 export const LINKS = {
-  whatsapp: "WHATSAPP_LINK_HERE",
-  instagram: "INSTAGRAM_LINK_HERE",
+  whatsapp: "https://wa.me/923193731269",
+  instagram: "https://www.instagram.com/the.ad.agency",
   tiktok: "TIKTOK_LINK_HERE",
   facebook: "FACEBOOK_LINK_HERE",
 } as const;
