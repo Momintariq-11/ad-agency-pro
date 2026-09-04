@@ -53,12 +53,6 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>© {new Date().getFullYear()} The Ad Agency. All rights reserved.</p>
-          <p>Professional services. Affordable rates. Customer-focused results.</p>
-        </div>
-      </div>
     </footer>
   );
 }
