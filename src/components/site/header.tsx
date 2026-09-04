@@ -67,7 +67,7 @@ export function Header() {
             className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-foreground sm:text-sm"
             aria-label="The Ad Agency"
           >
-            <span aria-hidden="true">{scrolled ? BRAND.slice(0, typed) : BRAND}</span>
+            <span aria-hidden="true">{scrolled ? BRAND.slice(0, typed) : ""}</span>
           </span>
         </a>
 
