@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.png.asset.json";
+
 import { NAV } from "@/lib/site";
 import { SocialLinks } from "./social-links";
 
@@ -19,7 +19,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo.url} alt="The Ad Agency logo" className="h-14 w-14 object-contain" />
+            <img src="/logo.jpg" alt="The Ad Agency logo" className="h-14 w-14 object-contain" />
             <span className="font-display text-lg font-semibold uppercase tracking-[0.16em]">
               The Ad Agency
             </span>
