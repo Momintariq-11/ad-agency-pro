@@ -11,8 +11,7 @@ import {
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { FloatingWhatsApp } from "@/components/site/floating-whatsapp";
-import { Portfolio } from "@/components/site/portfolio";
-import { SocialLinks } from "@/components/site/social-links";
+import { SocialCards } from "@/components/site/social-links";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { LINKS } from "@/lib/site";
 import logo from "@/assets/logo.png.asset.json";
@@ -68,7 +67,14 @@ const SERVICE_GROUPS = [
     icon: Sparkles,
     title: "AI Solutions",
     text: "AI-assisted work for businesses that want to move faster on content and everyday tasks.",
-    items: ["AI Content Solutions", "AI Creative Work", "AI Business Assistance", "Custom Requests"],
+    items: [
+      "AI Content Writing & Captions",
+      "AI Image & Creative Generation",
+      "AI Chat Assistants for Business",
+      "AI Product & Ad Visuals",
+      "Workflow Automation",
+      "Custom AI Requests",
+    ],
   },
 ];
 
@@ -150,7 +156,17 @@ function Home() {
         <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
           <div className="mx-auto grid max-w-6xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <p className="eyebrow">Ideas · Creative · Results</p>
+              <p className="eyebrow flex items-center gap-2">
+                {["Ideas", "·", "Creative", "·", "Results"].map((word, i) => (
+                  <span
+                    key={word + i}
+                    className="animate-fade-in opacity-0 [animation-fill-mode:forwards]"
+                    style={{ animationDelay: `${i * 140}ms` }}
+                  >
+                    {word}
+                  </span>
+                ))}
+              </p>
               <h1 className="mt-5 text-4xl leading-[1.05] sm:text-5xl md:text-6xl">
                 Your Business.
                 <br />
@@ -273,16 +289,6 @@ function Home() {
           </div>
         </Section>
 
-        {/* Work */}
-        <Section
-          id="work"
-          eyebrow="Our Work"
-          title="A look at the kind of work we produce."
-          intro="Browse by category. These spaces are reserved for our own project images and will be filled with real client work."
-          tone="surface"
-        >
-          <Portfolio />
-        </Section>
 
         {/* Why us */}
         <Section
@@ -318,31 +324,6 @@ function Home() {
           </ol>
         </Section>
 
-        {/* Customer satisfaction */}
-        <Section id="satisfaction" eyebrow="Customer Satisfaction" title="Finishing the job isn't the same as doing it right.">
-          <div className="mt-8 grid gap-12 lg:grid-cols-2">
-            <div className="space-y-5 leading-relaxed text-muted-foreground">
-              <p className="border-l-2 border-primary pl-6 text-lg text-foreground">
-                Our goal isn't simply to complete a project. It's to make sure our customers are
-                satisfied with the final result.
-              </p>
-              <p>
-                We review the work with you before it is delivered, make the changes you ask for,
-                and keep the conversation open after delivery. If something needs adjusting, we
-                would rather hear it and fix it.
-              </p>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-              {[1, 2].map((n) => (
-                <blockquote key={n} className="border border-dashed border-border p-6">
-                  <p className="text-sm italic text-muted-foreground">
-                    Client testimonial will appear here.
-                  </p>
-                </blockquote>
-              ))}
-            </div>
-          </div>
-        </Section>
 
         {/* Contact */}
         <Section
@@ -362,9 +343,11 @@ function Home() {
               <WhatsAppIcon className="h-4 w-4" />
               Contact Us on WhatsApp
             </a>
-            <div>
-              <p className="text-sm text-muted-foreground">Or find us on social media</p>
-              <SocialLinks className="mt-4" />
+            <div className="w-full">
+              <p className="text-sm text-muted-foreground">
+                Or reach us on our social media pages
+              </p>
+              <SocialCards className="mt-4" />
             </div>
           </div>
         </Section>
