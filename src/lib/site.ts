@@ -9,7 +9,7 @@ export const LINKS = {
 export const NAV = [
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
-  { label: "Our Work", href: "#work" },
+  
   { label: "Why Us", href: "#why-us" },
   { label: "Process", href: "#process" },
   { label: "Contact", href: "#contact" },
