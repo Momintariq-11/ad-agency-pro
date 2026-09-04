@@ -14,7 +14,7 @@ import { FloatingWhatsApp } from "@/components/site/floating-whatsapp";
 import { SocialCards } from "@/components/site/social-links";
 import { WhatsAppIcon } from "@/components/site/icons";
 import { LINKS } from "@/lib/site";
-import logo from "@/assets/logo.png.asset.json";
+
 
 const TITLE = "The Ad Agency — Websites, Advertising & Creative Services";
 const DESCRIPTION =
@@ -206,7 +206,7 @@ function Home() {
 
             <div className="relative mx-auto w-full max-w-sm">
               <img
-                src={logo.url}
+               src="/logo.jpg"
                 alt="The Ad Agency"
                 className="w-full object-contain"
                 loading="eager"
