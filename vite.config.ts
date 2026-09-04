@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Target Vercel for self-hosted deployments from the GitHub repo.
+  nitro: {
+    preset: "vercel",
+  },
 });

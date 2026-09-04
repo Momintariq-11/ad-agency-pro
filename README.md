@@ -10,6 +10,17 @@ Open your project in the [Lovable editor](https://lovable.dev) and keep building
 - **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
 - **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
 
+## Deploy on Vercel
+
+1. Push this repository to GitHub.
+2. Go to [vercel.com](https://vercel.com), click **Add New Project**, and import your GitHub repository.
+3. Vercel will detect the `vercel.json` settings:
+   - **Framework Preset:** Other
+   - **Build Command:** `vite build`
+4. Click **Deploy**.
+
+Vercel will use the `bun.lock` file automatically (Bun) or you can switch the install command to `npm install` / `yarn` / `pnpm install` in the project settings if you prefer.
+
 ## Development
 
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
