@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
+
 import { LINKS, NAV } from "@/lib/site";
 
 const BRAND = "The . Ad . Agency";
@@ -54,7 +54,7 @@ export function Header() {
       >
         <a href="#top" className="flex items-center gap-3" aria-label="The Ad Agency home">
           <img
-            src={logo.url}
+           src="/logo.jpg"
             alt="The Ad Agency logo"
             className="object-contain transition-all duration-500 ease-out"
             style={{
